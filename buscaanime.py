@@ -9,7 +9,7 @@ load_dotenv()
 def buscar_anime():
     nombre = input("Ingresa el nombre del anime: ")
     
-    # 1. VALIDACIÓN: Si el usuario pone símbolos prohibidos, lanzamos un error forzado
+    # 1. VALIDACIÓN: Si el usuario pone símbolos prohibidos, lanzamos un error forzadoOne
     # Esta expresión regular permite letras, números y espacios
     if not re.match("^[a-zA-Z0-9 ]*$", nombre) or not nombre.strip():
         print("❌ Error: Entrada inválida. Por favor, usa solo letras y números.")

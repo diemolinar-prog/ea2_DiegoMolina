@@ -11,7 +11,7 @@ COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
 # 5. Copiamos el resto de los archivos de tu PC al contenedor
-COPY . .
+COPY buscaanime.py .
 
 # 6. Comando para ejecutar tu script cuando inicies el contenedor
-CMD ["python", "main.py"]
+CMD ["python", "-u", "buscaanime.py"]
