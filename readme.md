@@ -37,7 +37,7 @@ Para ejecutar el proyecto localmente (requiere Docker):
 2. Construir la imagen: `docker build -t anime-app .`
 3. Ejecutar el contenedor: `docker run --rm anime-app`
    
-## sección de "Automatización (CI/CD)
+## Sección de "Automatización (CI/CD)
 El proyecto utiliza un Jenkins Pipeline (Groovy) para automatizar el ciclo de vida del software:
 Stage Preparation: Clona el repositorio desde GitHub usando credenciales seguras.
 Stage Build: Ejecuta el script automatizar.sh, el cual construye la imagen Docker y despliega el contenedor para realizar las pruebas de consumo de API.
