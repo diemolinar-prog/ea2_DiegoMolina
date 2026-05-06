@@ -1,5 +1,5 @@
 # 1. Definimos la imagen base: un sistema Linux ligero con Python preinstalado
-FROM python:3.9-slim
+FROM python:3.9
 
 # 2. Creamos un directorio de trabajo dentro del contenedor (nuestra "carpeta" interna)
 WORKDIR /app
