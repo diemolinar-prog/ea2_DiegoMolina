@@ -1,7 +1,0 @@
-CONTAINER ID        IMAGE                 COMMAND                  CREATED             STATUS                      PORTS                               NAMES
-d3b794d83029        sampleapp             "/bin/sh -c 'python …"   14 minutes ago      Exited (1) 14 minutes ago                                       samplerunning
-89d20dda512b        jenkins/jenkins:lts   "/usr/bin/tini -- /u…"   55 minutes ago      Up 55 minutes               0.0.0.0:8080->8080/tcp, 50000/tcp   jenkins_server
-  File [35m"/home/myapp/sample_app.py"[0m, line [35m13[0m
-    [1;31m<<[0m<<<<< HEAD
-    [1;31m^^[0m
-[1;35mIndentationError[0m: [35mexpected an indented block after 'if' statement on line 12[0m
