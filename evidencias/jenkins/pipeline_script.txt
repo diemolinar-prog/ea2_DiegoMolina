@@ -1,0 +1,43 @@
+pipeline {
+    agent any
+
+    environment {
+        // ID de la credencial configurada en Jenkins
+        GITHUB_CREDENTIALS_ID = 'github-token'
+    }
+
+    stages {
+        stage('Preparation') {
+            steps {
+                // Limpieza del espacio de trabajo y clonación del repositorio
+                cleanWs()
+                git credentialsId: "${GITHUB_CREDENTIALS_ID}", 
+                    url: 'https://github.com/diemolinar-prog/ea2_DiegoMolina.git', 
+                    branch: 'main'
+            }
+        }
+
+        stage('Build & Deploy') {
+            steps {
+                script {
+                    // Dar permisos y ejecutar el script de automatización
+                    sh 'chmod +x automatizar.sh'
+                    sh './automatizar.sh'
+                }
+            }
+        }
+    }
+
+    post {
+        always {
+            // Guardar el log de salida como artefacto
+            echo 'Finalizando Pipeline de Buscador de Anime...'
+        }
+        success {
+            echo 'Despliegue completado exitosamente.'
+        }
+        failure {
+            echo 'Error en el Pipeline. Revisar Console Output.'
+        }
+    }
+}
