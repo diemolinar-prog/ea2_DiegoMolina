@@ -16,8 +16,8 @@ def buscar_anime():
         return # Salimos de la función sin llamar a la API
 
     # 1. Traemos la URL base desde una variable de entorno
-api_base = os.getenv("API_URL", "https://api.jikan.moe/v4/anime")
-url = f"{api_base}?q={nombre}&limit=1"
+       api_base = os.getenv("API_URL", "https://api.jikan.moe/v4/anime")
+       url = f"{api_base}?q={nombre}&limit=1"
     
     try:
         response = requests.get(url, timeout=5)
