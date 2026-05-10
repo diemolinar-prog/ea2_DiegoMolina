@@ -15,7 +15,9 @@ def buscar_anime():
         print("❌ Error: Entrada inválida. Por favor, usa solo letras y números.")
         return # Salimos de la función sin llamar a la API
 
-    url = f"https://api.jikan.moe/v4/anime?q={nombre}&limit=1"
+    # 1. Traemos la URL base desde una variable de entorno
+api_base = os.getenv("API_URL", "https://api.jikan.moe/v4/anime")
+url = f"{api_base}?q={nombre}&limit=1"
     
     try:
         response = requests.get(url, timeout=5)
